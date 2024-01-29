@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/template', 'template.master');
+Route::view('/test', 'test');
+Route::view('/tos', 'tos');
+
+
+//  diatas sama dengan kodingan dibawah ini.!
+// Route::get('/template', function () {
+//     return view('template.master');
+// });
+
+Route::get('/hello', function() {
+    return "Hellowww..!!";
+})->name('hello');
+
+Route::post('/hai', function() {
+    return 'Haaaii';
+});
