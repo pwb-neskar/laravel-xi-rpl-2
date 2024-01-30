@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,10 @@ Route::view('/tos', 'tos');
 // });
 
 Route::get('/hello', function() {
-    return "Hellowww..!!";
+    $productId = DB::table('genres')->insertGetId(
+        [ 'nama' => 'Acer Aspire 5 Slim Laptop' ]
+    );
+    return $productId;
 })->name('hello');
 
 Route::post('/hai', function() {
